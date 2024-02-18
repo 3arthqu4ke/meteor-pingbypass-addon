@@ -1,0 +1,10 @@
+{
+  "name": "Meteor PingBypass Plugin",
+  "mixinConfig": "meteorpb.mixins.json",
+  "description": "A plugin that adds PingBypass compatibility to Meteor.",
+  "platforms": [
+    {
+      "name": "fabric"
+    }
+  ]
+}

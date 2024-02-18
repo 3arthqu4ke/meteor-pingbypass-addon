@@ -1,5 +1,5 @@
 plugins {
-    id "fabric-loom" version "1.4-SNAPSHOT"
+    id "fabric-loom" version "1.5-SNAPSHOT"
 }
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
@@ -17,6 +17,10 @@ repositories {
         name = "Meteor Dev Snapshots"
         url = "https://maven.meteordev.org/snapshots"
     }
+    maven {
+        name = '3arthMaven'
+        url = 'https://3arthqu4ke.github.io/maven'
+    }
 }
 
 dependencies {
@@ -27,6 +31,28 @@ dependencies {
 
     // Meteor
     modImplementation "meteordevelopment:meteor-client:${project.meteor_version}"
+
+    // PingBypass
+    api("me.earth.pingbypass:pb-api:$project.pb_version") {
+        exclude module: 'gson'
+    }
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+jar {
+    manifest {
+        attributes(
+            'PingBypassPluginConfig': 'MeteorPBPluginConfig.json',
+            'Implementation-Title': 'Meteor-PingBypass-Plugin',
+            'Implementation-Version': project.version,
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
 }
 
 processResources {

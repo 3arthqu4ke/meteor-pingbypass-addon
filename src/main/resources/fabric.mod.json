@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "id": "addon-template",
+  "id": "meteor-pingbypass-addon",
   "version": "${version}",
-  "name": "Addon Template",
-  "description": "An addon template for the Meteor addons.",
+  "name": "Meteor PingBypass Add-On",
+  "description": "A plugin to add pingbypass support to Meteor client",
   "authors": [
-    "seasnail"
+    "3arthqu4ke"
   ],
   "contact": {
-    "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
+    "repo": "https://github.com/3arthqu4ke/meteor-pingbypass-addon"
   },
-  "icon": "assets/template/icon.png",
+  "icon": "icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "com.example.addon.Addon"
+      "me.earth.meteorpb.AddOn"
     ]
   },
   "mixins": [
-    "addon-template.mixins.json"
+    "meteorpb.mixins.json"
   ],
   "custom": {
     "meteor-client:color": "225,25,25"
@@ -27,5 +27,8 @@
     "java": ">=17",
     "minecraft": ">=${mc_version}",
     "meteor-client": "*"
+  },
+  "recommends": {
+    "pingbypass-client": "*"
   }
 }

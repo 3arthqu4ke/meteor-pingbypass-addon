@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "me.earth.meteorpb.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "MixinEnumSetting",
+    "MixinGuiTheme",
+    "MixinMeteorClient"
+  ]
+}

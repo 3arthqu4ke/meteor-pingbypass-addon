@@ -1,8 +1,11 @@
-# Meteor Addon Template
+# Meteor PingBypass Add-On
 
-A template to allow easy usage of the Meteor Addon API.
+A [Meteor](https://github.com/MeteorDevelopment/meteor-client) Add-On/[PingBypass](https://github.com/3arthqu4ke/pingbypass) 
+plugin that adds PingBypass support to Meteor Client.
 
-### How to use:  
-- Clone this project
-- Use this template to create new modules/commands
-- Run the mod with Meteor.
+## Features
+- [x] A HUD module for active PingBypass modules
+- [x] A GUI for configuring PingBypass
+- [ ] Processing KeyEvents from remote PingBypass clients (Not implemented yet)
+- [ ] [Starscript](https://github.com/MeteorDevelopment/starscript) support
+- [ ] Cool Icon
