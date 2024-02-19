@@ -10,7 +10,6 @@ import meteordevelopment.meteorclient.utils.misc.Keybind;
 import net.minecraft.nbt.NbtCompound;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
 public class SettingTranslation {
@@ -23,6 +22,8 @@ public class SettingTranslation {
                                                           ((Number) setting.getDefaultValue()).doubleValue(), v -> SettingUtil.setValueUnchecked(setting, getCorrectValue(v, setting)));
                 builder.min(numberSetting.getMin().doubleValue());
                 builder.max(numberSetting.getMax().doubleValue());
+                builder.sliderMin(numberSetting.getMin().doubleValue());
+                builder.sliderMax(numberSetting.getMax().doubleValue());
                 result = builder.build();
                 result.set(((Number) setting.getValue()).doubleValue());
             } else if (setting instanceof NumberSetting<?> numberSetting
@@ -34,6 +35,8 @@ public class SettingTranslation {
                                                        ((Number) setting.getDefaultValue()).intValue(), v -> SettingUtil.setValueUnchecked(setting, getCorrectValue(v, setting)));
                 builder.min(numberSetting.getMin().intValue());
                 builder.max(numberSetting.getMax().intValue());
+                builder.sliderMin(numberSetting.getMin().intValue());
+                builder.sliderMax(numberSetting.getMax().intValue());
                 result = builder.build();
                 result.set(((Number) setting.getValue()).intValue());
             } else if (setting.getDefaultValue() instanceof Boolean) {
