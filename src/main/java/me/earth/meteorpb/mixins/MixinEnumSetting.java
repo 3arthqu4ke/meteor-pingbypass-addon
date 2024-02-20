@@ -7,12 +7,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
- * For now while awaiting <a href=https://github.com/MeteorDevelopment/meteor-client/pull/4412>https://github.com/MeteorDevelopment/meteor-client/pull/4412</a>.
+ * <a href=https://github.com/MeteorDevelopment/meteor-client/pull/4412>https://github.com/MeteorDevelopment/meteor-client/pull/4412</a>.
  */
 @Pseudo
 @Mixin(value = EnumSetting.class, remap = false)
 public class MixinEnumSetting {
-    @Redirect(method = "<init>", at = @At(value = "INVOKE", target = "Ljava/lang/Object;getClass()Ljava/lang/Class;"))
+    @Redirect(method = "<init>", at = @At(value = "INVOKE", target = "Ljava/lang/Object;getClass()Ljava/lang/Class;"), require = 0)
     private Class<?> getClassHook(Object value) {
         return ((Enum<?>) value).getDeclaringClass();
     }
