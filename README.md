@@ -6,6 +6,8 @@ plugin that adds PingBypass support to Meteor Client.
 ## Features
 - [x] A HUD module for active PingBypass modules
 - [x] A GUI for configuring PingBypass
+- [x] Syncs PingBypass friends into Meteor Friends
+- [ ] Sync Meteor Friends into PingBypass Friends
 - [ ] Processing KeyEvents from remote PingBypass clients (Not implemented yet)
 - [ ] [Starscript](https://github.com/MeteorDevelopment/starscript) support
 - [ ] Cool Icon

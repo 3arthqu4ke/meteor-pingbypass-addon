@@ -8,6 +8,7 @@
   },
   "mixins": [
     "MixinEnumSetting",
+    "MixinFriends",
     "MixinGuiTheme",
     "MixinMeteorClient"
   ]
